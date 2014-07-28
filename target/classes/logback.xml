@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <timestamp key="byDay" datePattern="yyyyMMdd"/>
+    
+    <!-- Output to Console -->
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%date %level [%thread] %10logger [%file:%line] %msg%n</pattern>
+        </layout>
+    </appender>
+    
+    
+    <!-- Output to File -->
+    <appender name="FileTxt" class="ch.qos.logback.core.FileAppender">
+        <file>e:/log/testspring.log</file>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%date%level%thread%10logger%file%line%msg%n</pattern>
+        </layout>
+    </appender>
+
+   
+
+    <!-- 需要记录日志的包 -->
+
+
+
+
+    <root>
+
+        <level value="INFO" />
+
+        <appender-ref ref="Console" />
+
+        <appender-ref ref="FileTxt" />
+
+    </root>
+
+</configuration>
