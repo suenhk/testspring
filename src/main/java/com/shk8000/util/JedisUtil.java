@@ -7,6 +7,11 @@ public class JedisUtil {
 	
 	public static JedisPool pool = null;
 	
+	private static String masterIp = "220.181.8.35";
+	private static int masterPort = 6379;
+	private static String slaveIp = "220.181.8.199";
+	private static int slavePort = 6379;
+	
 	public static JedisPool getPool(String ip, int port){
 		JedisPoolConfig config = new JedisPoolConfig();  
 	    config.setMaxActive(10);  
@@ -26,5 +31,7 @@ public class JedisUtil {
 	    }  
 	    return pool;  
 	}
+	
+	
 
 }

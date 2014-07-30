@@ -9,23 +9,43 @@
         <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>%date %level [%thread] %10logger [%file:%line] %msg%n</pattern>
         </layout>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">  
+		    <level>DEBUG</level>  
+		    <onMatch>ACCEPT</onMatch>  
+		    <onMismatch>DENY</onMismatch>  
+		</filter> 
     </appender>
     
     
     <!-- Output to File -->
-    <appender name="FileTxt" class="ch.qos.logback.core.FileAppender">
-        <file>e:/log/testspring.log</file>
+    <appender name="FileTxt" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    	<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--日志文件输出的文件名-->
+            <FileNamePattern>e:/log/testspring_%d{yyyy-MM-dd_HH}-%i.log</FileNamePattern>   
+            <!--日志文件保留天数 -->
+            <MaxHistory>3</MaxHistory>
+            <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+		        <MaxFileSize>10KB</MaxFileSize>
+		    </TimeBasedFileNamingAndTriggeringPolicy>      
+		    
+        </rollingPolicy>   
+        <!-- <file>e:/log/testspring.log</file>  -->
         <layout class="ch.qos.logback.classic.PatternLayout">
-            <pattern>%date%level%thread%10logger%file%line%msg%n</pattern>
+            <pattern>%date-%level-%thread-%10logger-%file-%line-%msg%n</pattern>
         </layout>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">  
+		    <level>DEBUG</level>  
+		    <onMatch>ACCEPT</onMatch>  
+		    <onMismatch>DENY</onMismatch>  
+		</filter> 
     </appender>
-
    
 
     <!-- 需要记录日志的包 -->
-
-
-
+    <logger name="com.shk8000.test.TestMaze" level="debug" additivity="false">  
+        <appender-ref ref="FileTxt" />  
+        <appender-ref ref="Console" />
+    </logger>
 
     <root>
 

@@ -54,8 +54,7 @@ public class Popo {
 
 		try {
 			URL postURL = new URL(CORP_POPO_URL);
-			HttpURLConnection conn = (HttpURLConnection) postURL
-					.openConnection();
+			HttpURLConnection conn = (HttpURLConnection)postURL.openConnection();
 			// Set properties for the HTTP connection
 			conn.setUseCaches(false); // do not use cache
 			conn.setDoOutput(true); // use for output
@@ -70,8 +69,7 @@ public class Popo {
 			os.write(sb.toString().getBytes("GBK"));
 			os.close();
 
-			BufferedReader in = new BufferedReader(new InputStreamReader(
-					conn.getInputStream()));
+			BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 			String inputLine = "";
 			String resultsPage = "";
 
@@ -93,8 +91,7 @@ public class Popo {
 	}
 
 	public static void main(String args[]) {
-		// Popo.send(new String[] { "bjsunling@corp.netease.com",
-		// "bjsunling@corp.netease.com" }, "test");
+		 Popo.send(new String[] { "bjhksun@corp.netease.com" }, "test");
 
 	}
 }

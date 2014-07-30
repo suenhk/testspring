@@ -68,17 +68,22 @@ public class TestController implements NotificationPublisherAware {
 	}
 	
 	public static Jedis jedis = null;
+	public static Jedis jedisR = null;
 	
 	static{
 		jedis = JedisUtil.getPool("220.181.8.35", 6379).getResource();
+		jedisR = JedisUtil.getPool("220.181.8.199", 6379).getResource();
 	}
 	
 	@RequestMapping(value="index")
 	public String index_page(Model model, HttpServletRequest request){
 		System.out.println("tesrrrrting!!!!!!!@@@@!!!!!!!!");
 		
-		jedis.set("hello", "world");
+		jedis.set("hellotest", "suen8000");
+		
 		logger.info("hahahahahahah111111111111111");
+		String v = jedisR.get("hellotest");
+		logger.info(v);
 //		System.out.println(testHello.sayHello("shk"));
 		model.addAttribute("shk8000", "spring!");
 //		postMessage();

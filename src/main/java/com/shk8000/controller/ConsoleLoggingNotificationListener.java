@@ -22,8 +22,8 @@ public class ConsoleLoggingNotificationListener implements
 		 System.out.println(notification);
 	     System.out.println(handback);
 	     System.out.println("the sun!");
-//	     notification.getType();
-	     Popo.send("Test spring jmx! "+notification.getType());
+
+//	     Popo.send("Test spring jmx! "+notification.getType());
 	}
 
 }
