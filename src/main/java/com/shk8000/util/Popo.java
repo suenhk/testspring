@@ -10,9 +10,9 @@ import org.apache.commons.lang.StringUtils;
 
 public class Popo {
 
-	private static final String CORP_POPO_URL = "http://220.181.29.178:5820/popo";
+	private static final String CORP_POPO_URL = "******";
 
-	private static String[] users = new String[] { "bjhksun@corp.netease.com" };
+	private static String[] users = new String[] { "shk8000@163.com" };
 
 	public static void send(String message) {
 		send(users, message);
@@ -91,7 +91,7 @@ public class Popo {
 	}
 
 	public static void main(String args[]) {
-		 Popo.send(new String[] { "bjhksun@corp.netease.com" }, "test");
+		 Popo.send(new String[] { "shk8000@163.com" }, "test");
 
 	}
 }
