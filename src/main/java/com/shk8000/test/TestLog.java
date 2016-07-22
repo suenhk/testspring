@@ -15,7 +15,7 @@ public class TestLog {
 		for (int i=0; i<100; i++){
 			logger.info("tettst:{} records {}", i,i);
 		}
-		
+		System.out.println("sk************");
 	}
 	
 	public static void main(String[] args){
