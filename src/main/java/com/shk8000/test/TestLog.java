@@ -17,6 +17,7 @@ public class TestLog {
 		}
 		System.out.println("sk************");
 		System.out.println("sk************");
+		System.out.println("sk************");
 	}
 	
 	public static void main(String[] args){
