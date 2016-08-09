@@ -41,6 +41,7 @@ public class TestMaze {
 	public static void main(String[] args){
 		logger.info("ffffff");
 		logger.warn("ffffff");
+		logger.warn("ffffff");
 		
 //		book[1][1]=1;
 //		dfs(1,1,0);
